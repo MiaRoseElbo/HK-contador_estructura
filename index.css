@@ -1,0 +1,145 @@
+
+    *, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+* {
+    -webkit-transition: opacity 0.1s ease-in-out;
+    -moz-transition: opacity 0.1s ease-in-out;
+    -o-transition: opacity 0.1s ease-in-out;
+    -ms-transition: opacity 0.1s ease-in-out;    
+    transition: opacity 0.1s ease-in-out;
+}
+
+@font-face {
+  font-family: distro;
+  src: url(src/DISTRO__.ttf);
+}
+
+
+#bg-left {
+  position:fixed; 
+  top:0; 
+  left:0; 
+  width:50%; 
+  height:100%;
+  z-index: -1;
+  animation:  0.5s ;
+}
+
+#bg-right {
+  position:fixed; 
+  top:0; 
+  left:50%; 
+  width:50%; 
+  height:100%;
+  z-index: -1;
+}
+
+
+.AbP {
+  background-image:url(src/abismal.jpg);
+  background-size:cover;
+  background-position:center;
+  -webkit-transition: background-image 0.5s linear;
+  -ms-transition: background-image 0.5s linear;
+  transition: background-image 0.5s linear;
+}
+.AcP {
+  background-image:url(src/acracia.jpg);
+  -webkit-transition: background-image 0.5s linear;
+  -ms-transition: background-image 0.5s linear;
+  transition: background-image 0.5s linear;
+}
+.CoP {
+  background-image:url(src/corporacion.jpg);
+  -webkit-transition: background-image 0.5s linear;
+  -ms-transition: background-image 0.5s linear;
+  transition: background-image 0.5s linear;
+}
+.QuP {
+  background-image:url(src/quimera.jpg);
+  -webkit-transition: background-image 0.5s linear;
+  -ms-transition: background-image 0.5s linear;
+  transition: background-image 0.5s linear;
+}
+
+.factions img {
+  width: 100px;
+  opacity: 25%;
+  -webkit-transition: opacity 0.25s linear;
+  -ms-transition: opacity 0.25s linear;
+  transition: opacity 0.25s linear;
+}
+
+.factions img:hover {
+  opacity: 100%;
+
+}
+
+.factions .selected_faction {
+  opacity: 100%;
+}
+
+.factions .selected_faction {
+  -webkit-filter: drop-shadow(1px 1px 0 black)
+                  drop-shadow(-1px -1px 0 black);
+  filter: drop-shadow(1px 1px 0 black) 
+          drop-shadow(-1px -1px 0 black);
+}
+
+#container {
+  font-size: 2.5em;
+  font-family: distro;
+  text-align: center;
+}
+
+.right { 
+  float: right;
+  width: 42.5%;
+  margin: 20px 5% 0 2.5%; 
+}
+
+.left {
+  float: left;
+  width: 42.5%;
+  margin: 20px 2.5% 0 5%;
+}
+
+.counter_number {
+  text-align: center;
+  font-size: 2em;
+
+}
+
+.counter_up {
+  display: block;
+  text-align: center;
+  border-bottom: 1px solid #999;
+  padding: 10px 0;
+}
+
+.counter_down {
+  display: block;
+  text-align: center;
+  border-top: 1px solid #999;
+  padding: 10px 0;
+}
+
+.counter {
+  opacity: 0.8;
+  background-color: #000;
+  border: 1px solid #999;
+  border-bottom: 1px solid #BBB;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+  color: #333;
+  text-align: center;
+  text-shadow: 0 1px 0 #EEE;
+  margin-top:30%;
+
+
+}

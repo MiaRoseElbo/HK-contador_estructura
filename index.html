@@ -1,0 +1,120 @@
+<head>
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<html>
+
+<div id="bg-left" class="AbP">
+</div>
+<div id="bg-right" class="AbP">
+</div>
+
+<div id="container">
+  
+  <div class="left">
+    
+   <div class="factions">
+    <img id="AbP1" class="selected_faction" src="src/Abismales_pix.png">
+    <img id="AcP1" src="src/Acracia_pix.png">
+    <img id="CoP1" src="src/Corporacion_pix.png">
+    <img id="QuP1" src="src/Quimera_pix.png">
+   </div>
+
+    <div class="counter">
+      <div id="UpP1" class="counter_up">▲</div>
+      <div id="CounterP1" class="counter_number">12</div>
+      <div id="DownP1" class="counter_down">▼</div>
+    </div>
+    
+  </div>
+
+
+  <div class="right">
+    
+   <div class="factions">
+    <img id="AbP2" class="selected_faction" src="src/Abismales_pix.png">
+    <img id="AcP2" src="src/Acracia_pix.png">
+    <img id="CoP2" src="src/Corporacion_pix.png">
+    <img id="QuP2" src="src/Quimera_pix.png">
+   </div>
+
+    <div class="counter">
+      <div id="UpP2" class="counter_up">▲</div>
+      <div id="CounterP2" class="counter_number">12</div>
+      <div id="DownP2" class="counter_down">▼</div>
+    </div>
+    
+  </div>
+
+</html>
+
+<script>
+
+
+var estructura =[0,12,12];
+var voluntad =[0,4,4];
+var lastBg = [0,'AbP','AbP'];
+
+var el = "";
+
+var bg1 = document.getElementById('bg-left');
+var bg2 = document.getElementById('bg-right');
+
+
+
+function Set_Bg(f, p) {
+
+  el = document.getElementById(lastBg[p]+p);
+  el.classList.remove("selected_faction");
+
+  el = document.getElementById(f+p);
+  el.classList.add("selected_faction");
+  
+  if (p==1){
+      bg1.classList.remove(lastBg[p]);
+      bg1.classList.add(f);
+    }else{
+      bg2.classList.remove(lastBg[p]);
+      bg2.classList.add(f);
+    }
+
+  lastBg[p] = f;
+
+}
+
+function Up(p) {
+  estructura[p]++;
+  console.log(estructura[p])
+  document.getElementById('CounterP'+(p)).innerHTML = estructura[p];
+}
+
+function Down(p) {
+  estructura[p]--;
+  console.log(estructura[p])
+  document.getElementById('CounterP'+(p)).innerHTML = estructura[p];
+}
+
+function prepareOnClicks() {
+    document.getElementById('AbP1').onclick = function() {  Set_Bg('AbP',1);};
+    document.getElementById('AcP1').onclick = function() {  Set_Bg('AcP',1);};
+    document.getElementById('CoP1').onclick = function() {  Set_Bg('CoP',1);};
+    document.getElementById('QuP1').onclick = function() {  Set_Bg('QuP',1);};
+    
+    document.getElementById('AbP2').onclick = function() {  Set_Bg('AbP',2);};
+    document.getElementById('AcP2').onclick = function() {  Set_Bg('AcP',2);};
+    document.getElementById('CoP2').onclick = function() {  Set_Bg('CoP',2);};
+    document.getElementById('QuP2').onclick = function() {  Set_Bg('QuP',2);};
+    
+    document.getElementById('UpP1').onclick = function() {  Up(1);};
+    document.getElementById('DownP1').onclick = function() { Down(1);};
+    document.getElementById('UpP2').onclick = function() { Up(2);};
+    document.getElementById('DownP2').onclick = function() { Down (2);};
+
+}
+
+window.onload = function() {
+  prepareOnClicks();
+  document.getElementById('CounterP1').innerHTML = estructura[1];
+  document.getElementById('CounterP2').innerHTML = estructura[2];
+};
+</script>
